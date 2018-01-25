@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://npmcdn.com/angular@1.6.5/angular.js"></script>
+    <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+<div ng-controller="MainCtrl">
+    <div class="imgs">
+        <div class="img-wrapper img-wrapper-1"></div>
+        <div class="img-wrapper img-wrapper-2"></div>
+        <div class="img-wrapper img-wrapper-3"></div>
+        <div class="img-wrapper img-wrapper-4"></div>
+    </div>
+    <div class="top-panel">
+        <input type="text" class="mix-input" ng-model="player" placeholder="Назовите нового игрока"/>
+        <button class="btn" ng-click="addPlayer()">Добавить игрока</button>
+        <button class="btn" ng-click="playersRandomize()">Перемешать</button>
+    </div>
+
+    <ul id="result" class="players-list" ng-show="players.length">
+        <li ng-repeat="player in players" class="players-list__item">
+            <span class="players-list-text-item" ng-bind="player"></span>
+            <i ng-click="removePlayer($index)" class="players-list-remove"></i>
+        </li>
+    </ul>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
